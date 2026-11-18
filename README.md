@@ -3,8 +3,8 @@
 `opencode-openai-usage` is a small OpenCode V2 plugin that displays remaining
 ChatGPT/Codex subscription allowance in the terminal footer and sidebar.
 
-**Status:** experimental. Use a source checkout; npm installation is not available
-yet.
+**Status:** experimental. Install directly from GitHub; the plugin is not
+published on npm.
 
 ## Requirements
 
@@ -79,29 +79,29 @@ accepts the same credential.
 
 ## Installation
 
-Download or clone this repository to a directory accessible to the OpenCode server.
-
-Add the repository directory to your global
+Add the GitHub repository URL to `plugins` in your global
 `~/.config/opencode/opencode.jsonc`, preserving other settings:
 
 ```jsonc
 {
   "$schema": "https://opencode.ai/config.json",
   "plugins": [
-    "/absolute/path/to/opencode-openai-usage"
+    "https://github.com/wiget/opencode-openai-usage"
   ]
 }
 ```
 
-One entry loads the server, RPC and TUI parts. A separate `cli.json` entry is not
-needed. For a remote OpenCode service, the checkout and server configuration must
-be on that server.
+OpenCode installs the plugin from GitHub; no manual clone is needed. One entry
+loads the server, RPC and TUI parts, so a separate `cli.json` entry is not needed.
+If you connect to a remote OpenCode service, add the URL to that server's
+configuration.
 
 The sidebar contribution appears when OpenCode's sidebar is visible. Configuration
 reloads automatically; use `/reload` to force a reload.
 
-Avoid loading multiple copies of the plugin through different configuration
-entries or automatic discovery.
+For local development, use the path to your checkout instead of the GitHub URL.
+If switching from a local checkout to GitHub, replace the existing entry rather
+than adding a second one. Avoid loading another copy through automatic discovery.
 
 ## Troubleshooting
 
