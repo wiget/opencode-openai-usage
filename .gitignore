@@ -1,0 +1,15 @@
+node_modules/
+dist/
+coverage/
+.artifacts/
+*.tgz
+*.log
+*.swp
+*.swo
+.env
+.env.*
+!.env.example
+.opencode/
+opencode.json
+opencode.jsonc
+.DS_Store
